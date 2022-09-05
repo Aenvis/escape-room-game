@@ -1,7 +1,7 @@
 # escape-room-game
 Project in Unity
 <br>
-**Naming conventions**
+**Naming conventions**<br>
 For scripts:
 - private var m_varName;
 - [SerializeField] var varName;
