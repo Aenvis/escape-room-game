@@ -12,5 +12,8 @@ For scenes:
 *prefix*SceneName<br> Available prefixes: gfx, dev
 <br> 
 
+Essential folders mark with **_**, eg.:
+
+
 Science Club RPG (Ruch Projektantow Gier) at Poznan University of Technology
 
