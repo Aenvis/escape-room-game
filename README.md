@@ -17,5 +17,5 @@ For scenes:
 Essential folders mark with _, eg.:<br>
 _Scripts, _Graphics, _Scenes
 
-Science Club RPG (Ruch Projektantow Gier) at Poznan University of Technology
-
+*Science Club RPG (Ruch Projektantow Gier) at Poznan University of Technology*
+--------------------------------
