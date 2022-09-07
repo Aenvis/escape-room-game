@@ -10,10 +10,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private Camera playerCam;
 
     private PlayerInputActions m_playerInputActions;
     private Vector2 m_input;
-    private Rigidbody rb;
+    private Rigidbody m_rb;
 
     private void Awake()
     {
@@ -34,25 +35,32 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = gameObject.GetComponentInChildren<Rigidbody>();
+        m_rb = gameObject.GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        var rotation = gameObject.transform.rotation;
+        rotation = new Quaternion(rotation.x, playerCam.transform.rotation.y, rotation.z, rotation.w);
+        gameObject.transform.rotation = rotation;
+        
         m_input = m_playerInputActions.PlayerMovement.Movement.ReadValue<Vector2>();
-        var dir = new Vector3(m_input.x, 0f, m_input.y).normalized;
-        
-        
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(m_input.x * moveSpeed * Time.fixedDeltaTime, rb.velocity.y, m_input.y * moveSpeed * Time.fixedDeltaTime);
+        var forward = gameObject.transform.forward;
+        var right = gameObject.transform.right;
+        
+        if (m_input.magnitude >= 0.1f)
+        {
+            m_rb.velocity = moveSpeed * Time.fixedDeltaTime * m_input.y * forward + moveSpeed * Time.fixedDeltaTime * m_input.x * right;
+        }
     }
     
     private void JumpPerformed(InputAction.CallbackContext context)
     {
-        rb.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
+        m_rb.AddForce(0f, jumpForce, 0f, ForceMode.Force);
     }
 }
 }
