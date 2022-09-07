@@ -3,6 +3,9 @@ Project in Unity
 ==========================
 <br>
 
+**Extensions / Frameworks used in the project:**<br>
+Unity Input System, Cinemachine<br> DOTween, Extenject - waiting to be added
+
 **Naming conventions**<br>
 ----------------------------
 For scripts:
