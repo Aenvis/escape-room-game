@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7364745988971528230}
   - component: {fileID: 4157366571431217038}
   - component: {fileID: 5253824056418665985}
-  - component: {fileID: 418071321228472102}
   m_Layer: 0
   m_Name: PlasicFloor3
   m_TagString: Untagged
@@ -112,16 +111,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.13105322, z: 2}
   m_Center: {x: 0.978, y: 0.08308344, z: 0}
---- !u!65 &418071321228472102
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9021881053959037427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9999499, y: 0.13105322, z: 0.06}
-  m_Center: {x: -0.000025004148, y: 0.08308344, z: 0.978}
