@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Controls
-{
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
@@ -37,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_rb = gameObject.GetComponent<Rigidbody>();
     }
-
+    
     private void Update()
     {
         var rotation = gameObject.transform.rotation;
@@ -63,5 +61,5 @@ public class PlayerMovement : MonoBehaviour
         m_rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
     }
 }
-}
+
     
