@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Controls
-{
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
@@ -37,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_rb = gameObject.GetComponent<Rigidbody>();
     }
-
+    
     private void Update()
     {
         var rotation = gameObject.transform.rotation;
@@ -54,14 +52,14 @@ public class PlayerMovement : MonoBehaviour
         
         if (m_input.magnitude >= 0.1f)
         {
-            m_rb.velocity = moveSpeed * Time.fixedDeltaTime * m_input.y * forward + moveSpeed * Time.fixedDeltaTime * m_input.x * right;
+            m_rb.velocity = moveSpeed * Time.fixedDeltaTime * m_input.y * forward + moveSpeed * Time.fixedDeltaTime * m_input.x * right + m_rb.velocity.y * Vector3.up;
         }
     }
     
     private void JumpPerformed(InputAction.CallbackContext context)
     {
-        m_rb.AddForce(0f, jumpForce, 0f, ForceMode.Force);
+        m_rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
     }
 }
-}
+
     
