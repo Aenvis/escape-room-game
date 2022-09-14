@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 862cea5d4e086f24c82f8eed3475ef44
+guid: ebd194fd74c7f6b44965eaa82cdd4e07
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Dupa
-    second: {fileID: 2100000, guid: 488eedcb31d454c4391fce4cc1af0c1d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: 3e9337f366aa60e4e86ab42ccb595ad7, type: 2}
+    second: {fileID: 2100000, guid: 488eedcb31d454c4391fce4cc1af0c1d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
