@@ -136,7 +136,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""DebugController"",
+            ""name"": ""Console"",
             ""id"": ""8b3881df-fb6f-4f57-be78-3f19b5ab1ce7"",
             ""actions"": [
                 {
@@ -191,10 +191,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
         m_PlayerMovement_Look = m_PlayerMovement.FindAction("Look", throwIfNotFound: true);
-        // DebugController
-        m_DebugController = asset.FindActionMap("DebugController", throwIfNotFound: true);
-        m_DebugController_ToggleDebug = m_DebugController.FindAction("ToggleDebug", throwIfNotFound: true);
-        m_DebugController_Return = m_DebugController.FindAction("Return", throwIfNotFound: true);
+        // Console
+        m_Console = asset.FindActionMap("Console", throwIfNotFound: true);
+        m_Console_ToggleDebug = m_Console.FindAction("ToggleDebug", throwIfNotFound: true);
+        m_Console_Return = m_Console.FindAction("Return", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -300,34 +300,34 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
 
-    // DebugController
-    private readonly InputActionMap m_DebugController;
-    private IDebugControllerActions m_DebugControllerActionsCallbackInterface;
-    private readonly InputAction m_DebugController_ToggleDebug;
-    private readonly InputAction m_DebugController_Return;
-    public struct DebugControllerActions
+    // Console
+    private readonly InputActionMap m_Console;
+    private IConsoleActions m_ConsoleActionsCallbackInterface;
+    private readonly InputAction m_Console_ToggleDebug;
+    private readonly InputAction m_Console_Return;
+    public struct ConsoleActions
     {
         private @PlayerInputActions m_Wrapper;
-        public DebugControllerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ToggleDebug => m_Wrapper.m_DebugController_ToggleDebug;
-        public InputAction @Return => m_Wrapper.m_DebugController_Return;
-        public InputActionMap Get() { return m_Wrapper.m_DebugController; }
+        public ConsoleActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ToggleDebug => m_Wrapper.m_Console_ToggleDebug;
+        public InputAction @Return => m_Wrapper.m_Console_Return;
+        public InputActionMap Get() { return m_Wrapper.m_Console; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(DebugControllerActions set) { return set.Get(); }
-        public void SetCallbacks(IDebugControllerActions instance)
+        public static implicit operator InputActionMap(ConsoleActions set) { return set.Get(); }
+        public void SetCallbacks(IConsoleActions instance)
         {
-            if (m_Wrapper.m_DebugControllerActionsCallbackInterface != null)
+            if (m_Wrapper.m_ConsoleActionsCallbackInterface != null)
             {
-                @ToggleDebug.started -= m_Wrapper.m_DebugControllerActionsCallbackInterface.OnToggleDebug;
-                @ToggleDebug.performed -= m_Wrapper.m_DebugControllerActionsCallbackInterface.OnToggleDebug;
-                @ToggleDebug.canceled -= m_Wrapper.m_DebugControllerActionsCallbackInterface.OnToggleDebug;
-                @Return.started -= m_Wrapper.m_DebugControllerActionsCallbackInterface.OnReturn;
-                @Return.performed -= m_Wrapper.m_DebugControllerActionsCallbackInterface.OnReturn;
-                @Return.canceled -= m_Wrapper.m_DebugControllerActionsCallbackInterface.OnReturn;
+                @ToggleDebug.started -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnToggleDebug;
+                @ToggleDebug.performed -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnToggleDebug;
+                @ToggleDebug.canceled -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnToggleDebug;
+                @Return.started -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnReturn;
+                @Return.performed -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnReturn;
+                @Return.canceled -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnReturn;
             }
-            m_Wrapper.m_DebugControllerActionsCallbackInterface = instance;
+            m_Wrapper.m_ConsoleActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @ToggleDebug.started += instance.OnToggleDebug;
@@ -339,14 +339,14 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             }
         }
     }
-    public DebugControllerActions @DebugController => new DebugControllerActions(this);
+    public ConsoleActions @Console => new ConsoleActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
     }
-    public interface IDebugControllerActions
+    public interface IConsoleActions
     {
         void OnToggleDebug(InputAction.CallbackContext context);
         void OnReturn(InputAction.CallbackContext context);

@@ -114,7 +114,7 @@
             ]
         },
         {
-            "name": "DebugController",
+            "name": "Console",
             "id": "8b3881df-fb6f-4f57-be78-3f19b5ab1ce7",
             "actions": [
                 {

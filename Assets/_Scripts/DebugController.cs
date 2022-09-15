@@ -6,34 +6,49 @@ using UnityEngine.InputSystem;
 
 public class DebugController : MonoBehaviour
 {
-    bool showConsole;
-    string input;
-
     public static DebugCommand KILL_ALL;
+    
+    private bool m_showConsole = false;
+    private string m_input;
+    private PlayerInputActions m_playerInputActions;
 
     public List<object> commandList;
-
-    public void OnToggleDebug(InputValue value)
-    {
-        showConsole = !showConsole;
-    }
-
+    
     private void Awake()
     {
-        KILL_ALL = new DebugCommand("kill_all", "Removes all heroes from the scene.", "kill_all", () =>
-        {
-            // Controller.instance.KillAllHeros();
-        });
+        InitCommands();
+        m_playerInputActions = new PlayerInputActions();
     }
 
+    private void OnEnable()
+    {
+        m_playerInputActions.Console.Enable();
+        m_playerInputActions.Console.ToggleDebug.performed += OnToggleDebug;
+    }
+    private void OnDisable()
+    {
+        m_playerInputActions.Console.Disable();
+        m_playerInputActions.Console.ToggleDebug.performed -= OnToggleDebug;
+    }
+    
     private void OnGUI()
     {
-        if (!showConsole) {return; }
+        if (!m_showConsole) return;
 
         float y = 0f;
         
         GUI.Box(new Rect(0, y, Screen.width, 30), "");
         GUI.backgroundColor = new Color(0, 0, 0, 0);
-        input = GUI.TextField(new Rect(10f, y + 5f, Screen.width - 20f, 20f), input);
+        m_input = GUI.TextField(new Rect(10f, y + 5f, Screen.width - 20f, 20f), m_input);
+    }
+    
+    private void OnToggleDebug(InputAction.CallbackContext context) => m_showConsole = !m_showConsole;
+    
+    private void InitCommands()
+    {
+        KILL_ALL = new DebugCommand("kill_all", "Removes all heroes from the scene.", "kill_all", () =>
+        {
+            Debug.Log("testing");
+        });
     }
 }
