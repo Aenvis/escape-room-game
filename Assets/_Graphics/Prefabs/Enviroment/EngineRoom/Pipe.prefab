@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6923690174839195689}
   - component: {fileID: 5183947521952054499}
   - component: {fileID: 424776616752481624}
+  - component: {fileID: 6260112452290946501}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -98,3 +99,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6402532953415861574, guid: fc976b46d3ef9c54f8db20b3a56f281e, type: 3}
+--- !u!136 &6260112452290946501
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697390023661608246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4549054
+  m_Height: 5.0582833
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}

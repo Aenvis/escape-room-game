@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 6956352475543878328}
   - component: {fileID: 6279766297773126941}
   - component: {fileID: 8125269317016895959}
-  - component: {fileID: -4054260496858688316}
+  - component: {fileID: 8689301130198191628}
+  - component: {fileID: 7745742385062971649}
+  - component: {fileID: 8357454679685173830}
   m_Layer: 0
   m_Name: Valve
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6279766297773126941
 MeshFilter:
@@ -84,7 +86,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-4054260496858688316
+--- !u!136 &8689301130198191628
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764835866996105218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.10067255
+  m_Height: 0.88000023
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.43, z: 0}
+--- !u!65 &7745742385062971649
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,5 +111,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.88000023, y: 0.86433494, z: 0.88}
-  m_Center: {x: 0, y: -0.00000010430813, z: 0}
+  m_Size: {x: 0.5, y: 0.12, z: 0.5}
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!65 &8357454679685173830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764835866996105218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.88000023, y: 0.1, z: 0.88}
+  m_Center: {x: 0, y: 0.82, z: 0}
