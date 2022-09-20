@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,9 +19,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 m_input;
     private Rigidbody m_rb;
 
+    [Inject]
+    public void Injection(PlayerInputActions playerInputActions)
+    {
+        m_playerInputActions = playerInputActions;
+    }
     private void Awake()
     {
-        m_playerInputActions = new PlayerInputActions();
         Cursor.visible = false;
     }
 
