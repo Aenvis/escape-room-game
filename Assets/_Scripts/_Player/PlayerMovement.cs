@@ -4,20 +4,24 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float maxMoveSpeed;
+    [SerializeField] float MAX_MOVE_SPEED = 0f;
+    [SerializeField] float BRAKING_TIME = 0f;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float brakingForce;
     [SerializeField] private Camera playerCam;
     [SerializeField] private Transform groundCheck;
     
-
-    private float m_currentMoveSpeed;
     private PlayerInputActions m_playerInputActions;
     private Vector2 m_input;
     private Rigidbody m_rb;
+    private float m_currentMoveSpeed;
+    private float m_curentBrakingTime;
+    private bool m_isMoving;
 
     [Inject]
     public void Injection(PlayerInputActions playerInputActions)
@@ -26,9 +30,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
     private void OnEnable()
     {
         m_playerInputActions.PlayerMovement.Enable();
@@ -36,17 +40,14 @@ public class PlayerMovement : MonoBehaviour
         m_playerInputActions.PlayerMovement.Walk.performed += Walk;
         m_playerInputActions.PlayerMovement.Walk.canceled += Walk;
     }
-
-
-    private void OnDisable()
-    {
-        m_playerInputActions.PlayerMovement.Disable();
-    }
-
     private void Start()
     {
         m_rb = gameObject.GetComponent<Rigidbody>();
-        m_currentMoveSpeed = maxMoveSpeed;
+        m_currentMoveSpeed = MAX_MOVE_SPEED;
+    }
+    private void OnDisable()
+    {
+        m_playerInputActions.PlayerMovement.Disable();
     }
     
     private void Update()
@@ -65,7 +66,20 @@ public class PlayerMovement : MonoBehaviour
         
         if (m_input.magnitude >= 0.1f)
         {
+            m_isMoving = true;
+            m_curentBrakingTime = BRAKING_TIME;
             m_rb.velocity = m_currentMoveSpeed * Time.fixedDeltaTime * m_input.y * forward + m_currentMoveSpeed * Time.fixedDeltaTime * m_input.x * right + m_rb.velocity.y * Vector3.up;
+        }
+        else
+        {
+            m_isMoving = false;
+        }
+
+        if (m_curentBrakingTime >= -0.1f && !m_isMoving)
+        {
+            m_curentBrakingTime -= Time.fixedDeltaTime;
+            var dir = m_rb.velocity.normalized;
+            m_rb.AddForce(-(dir) * brakingForce, ForceMode.Force);
         }
     }
     
@@ -85,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         else if (context.canceled)
         {
             Debug.Log("Shift released");
-            m_currentMoveSpeed = maxMoveSpeed;
+            m_currentMoveSpeed = MAX_MOVE_SPEED;
         }
     }
 }

@@ -3664,7 +3664,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 114800240}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 2010700884}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: BRAKING_TIME
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: brakingForce
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: maxMoveSpeed
+      value: 196.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: BREAKING_TIME
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: MAX_MOVE_SPEED
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876197, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
@@ -7509,6 +7529,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8538817919973227337, guid: 440c2fc3f8dbe004dbfff30eb16e3176, type: 3}
   m_PrefabInstance: {fileID: 1980826666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2010700884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8726324800985806568, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+  m_PrefabInstance: {fileID: 849236181}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2037021199
 PrefabInstance:
