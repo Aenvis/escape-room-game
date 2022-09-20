@@ -2,26 +2,37 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Zenject;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    #region sfields
     [SerializeField] float MAX_MOVE_SPEED = 0f;
     [SerializeField] float BRAKING_TIME = 0f;
     [SerializeField] private float jumpForce;
     [SerializeField] private float brakingForce;
+    [SerializeField] private float jumpFallForce;
+    [SerializeField] private float jumpTimer;
     [SerializeField] private Camera playerCam;
     [SerializeField] private Transform groundCheck;
-    
+    [SerializeField] private float groundCheckRadius;
+    [SerializeField] private LayerMask walkableLayer;
+    #endregion
+
+    #region fields
     private PlayerInputActions m_playerInputActions;
     private Vector2 m_input;
     private Rigidbody m_rb;
     private float m_currentMoveSpeed;
     private float m_curentBrakingTime;
+    private float m_currentJumpTimer;
     private bool m_isMoving;
+    private bool m_isGrounded;
+    #endregion
 
     [Inject]
     public void Injection(PlayerInputActions playerInputActions)
@@ -37,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
     {
         m_playerInputActions.PlayerMovement.Enable();
         m_playerInputActions.PlayerMovement.Jump.performed += JumpPerformed;
-        m_playerInputActions.PlayerMovement.Walk.performed += Walk;
-        m_playerInputActions.PlayerMovement.Walk.canceled += Walk;
+        m_playerInputActions.PlayerMovement.Walk.performed += WalkPerformed;
+        m_playerInputActions.PlayerMovement.Walk.canceled += WalkPerformed;
     }
     private void Start()
     {
@@ -52,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
     
     private void Update()
     {
+        m_isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, walkableLayer);
+        if (jumpTimer >= 0)
+        {
+            jumpTimer -= Time.fixedDeltaTime;
+        }
         var rotation = gameObject.transform.rotation;
         rotation = new Quaternion(rotation.x, playerCam.transform.rotation.y, rotation.z, rotation.w);
         gameObject.transform.rotation = rotation;
@@ -60,6 +76,28 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        Movement();
+        JumpLogic();
+    }
+    
+    private void JumpPerformed(InputAction.CallbackContext context)
+    {
+        if (!m_isGrounded) return;
+
+        m_rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
+        m_currentJumpTimer = jumpTimer;
+    }
+
+    private void JumpLogic()
+    {
+        if (m_currentJumpTimer < 0f && !m_isGrounded && m_rb.velocity.y <= 0f)
+        {
+            m_rb.AddForce(0f, -jumpFallForce, 0f, ForceMode.Force);
+        }
+    }
+    
+    private void Movement()
     {
         var forward = gameObject.transform.forward;
         var right = gameObject.transform.right;
@@ -83,22 +121,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    private void JumpPerformed(InputAction.CallbackContext context)
+    private void WalkPerformed(InputAction.CallbackContext context)
     {
-        m_rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
-    }
-    
-    private void Walk(InputAction.CallbackContext context)
-    {
-        Debug.Log("WALK");
+       // Debug.Log("WALK");
         if (context.performed)
         {
-            Debug.Log("Shift pressed");
+           // Debug.Log("Shift pressed");
             m_currentMoveSpeed /= 2;
         }
         else if (context.canceled)
-        {
-            Debug.Log("Shift released");
+        { 
+            // Debug.Log("Shift released");
             m_currentMoveSpeed = MAX_MOVE_SPEED;
         }
     }

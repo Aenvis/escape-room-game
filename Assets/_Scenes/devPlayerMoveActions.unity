@@ -1279,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5390925846941273345, guid: 66141ae930a6e2d42aca0d57bb2f57d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.913727
+      value: 12.117727
       objectReference: {fileID: 0}
     - target: {fileID: 5390925846941273345, guid: 66141ae930a6e2d42aca0d57bb2f57d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1295,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5390925846987589279, guid: 66141ae930a6e2d42aca0d57bb2f57d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.913727
+      value: 12.117727
       objectReference: {fileID: 0}
     - target: {fileID: 5390925846987589279, guid: 66141ae930a6e2d42aca0d57bb2f57d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3653,7 +3653,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 98054d365fa8d1f45acf7ee7fe001792, type: 2}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: jumpForce
-      value: 30
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: jumpTimer
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: moveSpeed
@@ -3669,11 +3673,11 @@ PrefabInstance:
       objectReference: {fileID: 2010700884}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: BRAKING_TIME
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: brakingForce
-      value: 30
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: maxMoveSpeed
@@ -3684,8 +3688,20 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: jumpFallForce
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: MAX_MOVE_SPEED
-      value: 200
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: walkableLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876197, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: m_RootOrder
@@ -3701,7 +3717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876197, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.46
+      value: 2.664
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876197, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3739,6 +3755,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 98054d365fa8d1f45acf7ee7fe001792, type: 2}
+    - target: {fileID: 8726324801446876201, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876201, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876202, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: m_Name
       value: test_Body
