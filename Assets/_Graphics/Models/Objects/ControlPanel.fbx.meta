@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 717b89598b5cea94d86def2f48c8e58e
+guid: 3417ce7b80336e44a8473faf36c68a90
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ControlPanel
+    second: {fileID: 2100000, guid: 5af5859b90b8dd94a8c0b76e72cff843, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
