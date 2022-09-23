@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4506024216894507855}
   - component: {fileID: 9211242592052877899}
   - component: {fileID: 8455868013437009599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicDoorway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 7151359190100449401}
   - component: {fileID: 2186425183763723008}
   - component: {fileID: 4667539485617802335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'MetalicDoor '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7344299270647024705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

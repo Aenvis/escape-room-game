@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1769266778238160132}
   - component: {fileID: 5774932596963710507}
   - component: {fileID: 5991094693426835584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicPlatform_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7909516407459055060}
   - component: {fileID: 3142985794251535013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3469623573912340466}
   - component: {fileID: 7016870100110015590}
   - component: {fileID: 7613189176388197238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicPlatform_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

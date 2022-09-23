@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3091497877212504348}
   - component: {fileID: 7835466591183476333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicStairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.67585415
+  - screenRelativeHeight: 0.1828154
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6778241053459461392}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 5078695924844180919}
   - component: {fileID: 2641242271126356145}
   - component: {fileID: 7961986566764860408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 8234667489632555590}
   - component: {fileID: 555124209024082382}
   - component: {fileID: 3189775506383339392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

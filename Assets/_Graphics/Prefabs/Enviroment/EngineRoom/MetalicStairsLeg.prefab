@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9001654368848430308}
   - component: {fileID: 8103677004264637570}
   - component: {fileID: 3479249505504645287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StairsLeg_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4654742765044873822}
   - component: {fileID: 1639487827281452834}
   - component: {fileID: 8227540332214955743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StairsLeg_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9065260253488189665}
   - component: {fileID: 4293154763671807888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalicStairsLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

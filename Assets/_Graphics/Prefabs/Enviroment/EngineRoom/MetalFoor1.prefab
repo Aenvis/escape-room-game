@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 149382809098334060}
   - component: {fileID: 2735445938285566886}
   - component: {fileID: 8291460573033577391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalFoor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
