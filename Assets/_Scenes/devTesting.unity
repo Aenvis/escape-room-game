@@ -7109,7 +7109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: jumpForce
-      value: 300
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: moveSpeed
@@ -7119,6 +7119,10 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 114800240}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: maxMoveSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876197, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: m_RootOrder
       value: 0
