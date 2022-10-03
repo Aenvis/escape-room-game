@@ -3763,6 +3763,14 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876201, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726324801446876201, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876202, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: m_Name
       value: test_Body
