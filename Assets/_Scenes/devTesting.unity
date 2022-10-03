@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.0039957035, g: 0.00021792634, b: 0.000000051515347, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+>>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7139,10 +7143,17 @@ PrefabInstance:
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: groundCheck
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 591402032}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: BRAKING_TIME
       value: 0.5
+=======
+      objectReference: {fileID: 2007049791}
+    - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+      propertyPath: BRAKING_TIME
+      value: 0.25
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: brakingForce
@@ -7158,7 +7169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: MAX_MOVE_SPEED
+<<<<<<< Updated upstream
       value: 300
+=======
+      value: 400
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8726324801446876196, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
       propertyPath: groundCheckRadius
@@ -15011,6 +15026,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f3e394584231ec49a37bf8614eb4fdd, type: 3}
+--- !u!4 &2007049791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8726324800985806568, guid: 4bf2e842a23c4a340af55938ef937079, type: 3}
+  m_PrefabInstance: {fileID: 849236181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2013264687
 PrefabInstance:
   m_ObjectHideFlags: 0
