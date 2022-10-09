@@ -11,11 +11,11 @@ public class PlateBehaviour : MonoBehaviour
     [SerializeField] private GameEvent deactivatePlate;
     
 
-    private Material m_material;
+    private Renderer m_renderer;
     
     private void Start()
     {
-        m_material = GetComponent<Material>();
+        m_renderer = GetComponent<Renderer>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,11 +32,11 @@ public class PlateBehaviour : MonoBehaviour
 
     public void Activate()
     {
-        m_material = green; 
+        m_renderer.material = green;
     }
     
     public void Deactivate()
     {
-        m_material = red;
+        m_renderer.material = red;
     }
 }
