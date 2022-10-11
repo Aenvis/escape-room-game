@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SmallMetals
+  m_Name: MetalicWallB
   m_Shader: {fileID: 4800000, guid: ee7e4c9a5f6364b688a332c67fc32cca, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,8 +28,8 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 808556a6d06e4a24cb35862cfa6f3966, type: 3}
-        m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 2.11, y: 0.05}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 1, y: 1}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 9502f7c1c7f33844a96e2369db579731, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -92,10 +92,10 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
-    - _BumpScale: 1
+    - _BumpScale: 0.4
     - _ClearCoat: 1
-    - _ClearCoatMask: 0.216
-    - _ClearCoatSmoothness: 0.292
+    - _ClearCoatMask: 0.725
+    - _ClearCoatSmoothness: 0.6
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -106,12 +106,12 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Metallic: 0.445
+    - _Metallic: 0.785
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: -22
     - _ReceiveShadows: 1
-    - _Smoothness: 0.38
+    - _Smoothness: 0.601
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
