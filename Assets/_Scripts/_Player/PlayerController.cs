@@ -20,7 +20,7 @@ namespace Project.Player
         #endregion
 
         #region fields
-        private PlayerInputActions m_playerInputActions;
+        private PlayerActionMaps m_playerInputActions;
         private Vector2 m_input;
         private Rigidbody m_rb;
         private float m_currentMoveSpeed;
@@ -31,7 +31,7 @@ namespace Project.Player
         #endregion
 
         [Inject]
-        public void Injection(PlayerInputActions playerInputActions)
+        public void Injection(PlayerActionMaps playerInputActions)
         {
             m_playerInputActions = playerInputActions;
         }

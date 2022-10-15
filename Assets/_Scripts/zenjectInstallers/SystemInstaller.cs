@@ -6,7 +6,7 @@ namespace Project.Zenject
     {
         public override void InstallBindings()
         {
-            Container.Bind<PlayerInputActions>().AsCached();
+            Container.Bind<PlayerActionMaps>().AsCached();
         }
     }
 }
