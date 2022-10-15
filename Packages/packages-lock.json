@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.didimo.sdk.core": {
+      "version": "https://github.com/didimoinc/didimo-digital-human-unity-sdk.git?path=/com.didimo.sdk.core#4.4.9",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.2",
+        "com.unity.render-pipelines.universal": "10.5.0",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.editorcoroutines": "1.0.0",
+        "com.unity.cinemachine": "2.6.11",
+        "com.unity.timeline": "1.6.4"
+      },
+      "hash": "2d46b0c23aa96a62633649029bd6b6540a6e2cf7"
+    },
     "com.unity.burst": {
       "version": "1.7.3",
       "depth": 1,
@@ -98,7 +112,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
