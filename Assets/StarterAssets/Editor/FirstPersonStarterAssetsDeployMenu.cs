@@ -4,6 +4,8 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
+using Project.Player;
+
 namespace StarterAssets
 {
     public partial class StarterAssetsDeployMenu : ScriptableObject
