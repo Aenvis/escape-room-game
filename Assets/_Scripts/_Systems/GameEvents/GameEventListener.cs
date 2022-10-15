@@ -1,7 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
+namespace Project.Systems.GameEvents
+{
     public class GameEventListener : MonoBehaviour
     {
         [SerializeField] private GameEvent gameEvent;
@@ -22,3 +23,4 @@ using UnityEngine.Events;
             response?.Invoke();
         }
     }
+}

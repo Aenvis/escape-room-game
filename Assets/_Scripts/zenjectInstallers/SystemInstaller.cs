@@ -1,9 +1,12 @@
 ﻿using Zenject;
 
-public class SystemInstaller : MonoInstaller<SystemInstaller>
+namespace Project.Zenject
 {
-    public override void InstallBindings()
+    public class SystemInstaller : MonoInstaller<SystemInstaller>
     {
-        Container.Bind<PlayerInputActions>().AsCached();
+        public override void InstallBindings()
+        {
+            Container.Bind<PlayerInputActions>().AsCached();
+        }
     }
 }
