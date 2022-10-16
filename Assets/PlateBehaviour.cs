@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Project.Systems.GameEvents;
 using UnityEngine;
+using Project.Systems.GameEvents;
 
 public class PlateBehaviour : MonoBehaviour
 {
