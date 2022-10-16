@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Project.Systems.GameEvents;
 using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace Project.Debug
 {
     public class DebugController : MonoBehaviour
     {
+        [SerializeField] private GameEvent EnablePlayerMovement;
+        [SerializeField] private GameEvent DisablePlayerMovement;
+        
         public static DebugCommand KILL_ALL;
 
         private bool m_showConsole;
@@ -44,6 +48,7 @@ namespace Project.Debug
             if (!m_showConsole) return;
 
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             float y = 0f;
         
             GUI.Box(new Rect(0, y, Screen.width, 30), "");
@@ -54,8 +59,10 @@ namespace Project.Debug
         private void OnToggleDebug(InputAction.CallbackContext context)
         {
         m_showConsole = !m_showConsole;
-        //if(m_showConsole) m_playerActionMaps.
-        }
+        if (m_showConsole) DisablePlayerMovement.Invoke();
+        else EnablePlayerMovement.Invoke();
+        } 
+        
         private void InitCommands()
         {
             KILL_ALL = new DebugCommand("kill_all", "Removes all heroes from the scene.", "kill_all", () =>

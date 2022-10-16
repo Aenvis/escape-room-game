@@ -52,13 +52,13 @@ namespace Project.Player
 
 			// cinemachine
 			private float _cinemachineTargetPitch;
-
-			// player
+						  
+			// player     
 			private float _speed;
 			private float _rotationVelocity;
 			private float _verticalVelocity;
 			private float _terminalVelocity = 53.0f;
-
+						  
 			// timeout deltatime
 			private float _jumpTimeoutDelta;
 			private float _fallTimeoutDelta;
@@ -251,6 +251,20 @@ namespace Project.Player
 				if (lfAngle > 360f) lfAngle -= 360f;
 				return Mathf.Clamp(lfAngle, lfMin, lfMax);
 			}
+
+			public void EnablePlayerMovement()
+			{
+				_playerInput.actions.Enable();
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
+			}
+
+			public void DisablePlayerMovement()
+			{
+			_playerInput.actions.Disable();
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+			} 
 
 			private void OnDrawGizmosSelected()
 			{
