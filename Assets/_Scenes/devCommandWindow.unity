@@ -4151,8 +4151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36c75ce5afe81c49974298cea715aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnablePlayerMovement: {fileID: 11400000, guid: e8de9c3b30eaec34b8e758dafb644505, type: 2}
-  DisablePlayerMovement: {fileID: 11400000, guid: b05a10fdfc895da40b25e9418a227fbf, type: 2}
+  enablePlayerMovement: {fileID: 11400000, guid: e8de9c3b30eaec34b8e758dafb644505, type: 2}
+  disablePlayerMovement: {fileID: 11400000, guid: b05a10fdfc895da40b25e9418a227fbf, type: 2}
 --- !u!4 &985505669
 Transform:
   m_ObjectHideFlags: 0
