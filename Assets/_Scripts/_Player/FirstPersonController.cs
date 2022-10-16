@@ -252,20 +252,6 @@ namespace Project.Player
 				return Mathf.Clamp(lfAngle, lfMin, lfMax);
 			}
 
-			public void EnablePlayerMovement()
-			{
-				_playerInput.actions.Enable();
-				Cursor.lockState = CursorLockMode.Locked;
-				Cursor.visible = false;
-			}
-
-			public void DisablePlayerMovement()
-			{
-			_playerInput.actions.Disable();
-			Cursor.lockState = CursorLockMode.None;
-			Cursor.visible = true;
-			} 
-
 			private void OnDrawGizmosSelected()
 			{
 				Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
@@ -277,5 +263,17 @@ namespace Project.Player
 				// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 				Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 			}
+			
+			#region debug
+			#if UNITY_EDITOR
+			public void SpeedUp(int val)
+			{
+				UnityEngine.Debug.Log(val);
+				MoveSpeed += val;
+			}
+			#endif
+			
+			#endregion
 		}
+
 	}

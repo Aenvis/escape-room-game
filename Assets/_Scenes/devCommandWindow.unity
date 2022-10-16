@@ -4153,6 +4153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enablePlayerMovement: {fileID: 11400000, guid: e8de9c3b30eaec34b8e758dafb644505, type: 2}
   disablePlayerMovement: {fileID: 11400000, guid: b05a10fdfc895da40b25e9418a227fbf, type: 2}
+  speedUp: {fileID: 11400000, guid: 4d327222a1f940842abab007bd16a7c7, type: 2}
 --- !u!4 &985505669
 Transform:
   m_ObjectHideFlags: 0
@@ -8556,6 +8557,7 @@ GameObject:
   - component: {fileID: 6079653163276655195}
   - component: {fileID: 7561855468603803181}
   - component: {fileID: 7561855468603803180}
+  - component: {fileID: 7561855468603803182}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -8728,12 +8730,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: e8de9c3b30eaec34b8e758dafb644505, type: 2}
-  response:
+  voidResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6079653163276655184}
-        m_TargetAssemblyTypeName: Project.Player.FirstPersonController, Assembly-CSharp
-        m_MethodName: EnablePlayerMovement
+      - m_Target: {fileID: 6079653163276655195}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
+        m_MethodName: ActivateInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8743,6 +8745,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  intResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  strResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7561855468603803181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8756,12 +8764,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: b05a10fdfc895da40b25e9418a227fbf, type: 2}
-  response:
+  voidResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6079653163276655184}
-        m_TargetAssemblyTypeName: Project.Player.FirstPersonController, Assembly-CSharp
-        m_MethodName: DisablePlayerMovement
+      - m_Target: {fileID: 6079653163276655195}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
+        m_MethodName: DeactivateInput
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8771,6 +8779,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  intResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  strResponse:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7561855468603803182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079653163276655191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe838aab467940bcbbf57446552786d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4d327222a1f940842abab007bd16a7c7, type: 2}
+  voidResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  intResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6079653163276655184}
+        m_TargetAssemblyTypeName: Project.Player.FirstPersonController, Assembly-CSharp
+        m_MethodName: SpeedUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  strResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8479769291208231038
 MonoBehaviour:
   m_ObjectHideFlags: 0

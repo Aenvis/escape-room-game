@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Project.Systems.GameEvents;
 using StarterAssets;
@@ -11,18 +12,20 @@ namespace Project.Debug
 {
     public class DebugController : MonoBehaviour
     {
+        //here serialize all Game Events to be invoked with commands
         [SerializeField] private GameEvent enablePlayerMovement;
         [SerializeField] private GameEvent disablePlayerMovement;
+        [SerializeField] private GameEvent speedUp;
         
-        private static DebugCommand<int> SPEED_UP;
-        private static DebugCommand HELP;
+        private static DebugCommand<int> s_SPEED_UP;
+        private static DebugCommand s_HELP;
 
         private bool m_showConsole;
         private bool m_showHelp;
         private string m_input;
         private PlayerActionMaps m_playerActionMaps;
 
-        public List<object> CommandList = new List<object>();
+        private List<object> m_commandList = new List<object>();
 
         [Inject]
         private void Injection(PlayerActionMaps playerInput)
@@ -55,15 +58,16 @@ namespace Project.Debug
 
             float y = 0f;
             
+            //display all commands if help command was used
             if (m_showHelp)
             {
                 GUI.Box(new Rect(0, y, Screen.width, 100), "");
-                Rect viewPort = new Rect(0, 0, Screen.width - 30, 20 * CommandList.Count);
+                Rect viewPort = new Rect(0, 0, Screen.width - 30, 20 * m_commandList.Count);
                 m_scroll = GUI.BeginScrollView(new Rect(0, y + 5f, Screen.width, 90), m_scroll, viewPort);
 
-                for (int i = 0; i < CommandList.Count; i++)
+                for (int i = 0; i < m_commandList.Count; i++)
                 {
-                    DebugCommandBase cmd = CommandList[i] as DebugCommandBase;
+                    DebugCommandBase cmd = m_commandList[i] as DebugCommandBase;
                     string label = $"{cmd.CommandFormat} -  {cmd.CommandDescription}";
                     Rect labelRect = new Rect(5, 20 * i, viewPort.width - 100, 20);
                     GUI.Label(labelRect, label);
@@ -83,8 +87,15 @@ namespace Project.Debug
         private void OnToggleDebug(InputAction.CallbackContext context)
         {
         m_showConsole = !m_showConsole;
+        ToggleCursor(m_showConsole);
         if (m_showConsole) disablePlayerMovement.Invoke();
         else enablePlayerMovement.Invoke();
+        }
+
+        private void ToggleCursor(bool state)
+        {
+            Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = state;
         }
 
         private void OnEnterPressed(InputAction.CallbackContext context)
@@ -94,30 +105,38 @@ namespace Project.Debug
             m_input = "";
         }
         
-        //TODO: Refactor this so it uses GameEvent instead of Action (easy)  
+        //TODO: Refactor this so it uses GameEvent instead of Action (not easy)  --- done
         private void InitCommands()
         {
-            SPEED_UP = new DebugCommand<int>("speed_up", "Speeds up the character.", "speed_up", (val) =>
+            s_SPEED_UP = new DebugCommand<int>("speed_up", "Speeds up the character.", "speed_up <value>", (val) =>
             {
-                UnityEngine.Debug.Log(val);
+                speedUp.InvokeWithIntParam(val);
             });
-            CommandList.Add(SPEED_UP);
-
-            HELP = new DebugCommand("help", "Shows all available commands.", "help", () =>
+            s_HELP = new DebugCommand("help", "Shows all available commands.", "help", () =>
             {
                 m_showHelp = true;
             });
-            CommandList.Add(HELP);
+            
+            //TODO: automize insertion of commands so we don't have to do it manually :(
+            m_commandList.Add(s_HELP);
+            m_commandList.Add(s_SPEED_UP);
         }
         
         private void HandleInput()
         {
-            string[] properties = m_input.Split(' ');
-            for (int i = 0; i < CommandList.Count; i++)
+            string[] properties = new string[2];
+            properties = m_input.Split(' ');
+            for (int i = 0; i < m_commandList.Count; i++)
             {
-                DebugCommandBase commandBase = CommandList[i] as DebugCommandBase;
-                (CommandList[i] as DebugCommand)?.Invoke();
-                (CommandList[i] as DebugCommand<int>)?.Invoke(int.Parse(properties[1]));
+                DebugCommandBase commandBase = m_commandList[i] as DebugCommandBase;
+                if (commandBase is null || !m_input.Contains(commandBase.CommandId)) continue;
+                
+                if (m_commandList[i] is DebugCommand) (m_commandList[i] as DebugCommand)?.Invoke();
+                else if (m_commandList[i] is DebugCommand<int>)
+                {
+                    if (String.IsNullOrEmpty(properties[1]) || String.IsNullOrWhiteSpace(properties[1])) properties[1] = "0"; //TODO: it still throws an error (out of bounds), try to fix it?
+                    (m_commandList[i] as DebugCommand<int>)?.Invoke(int.Parse(properties[1]));
+                }
             }
         }
     }
