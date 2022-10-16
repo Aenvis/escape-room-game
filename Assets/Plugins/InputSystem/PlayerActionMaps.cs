@@ -169,7 +169,7 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Return"",
+                    ""name"": ""Enter"",
                     ""type"": ""Button"",
                     ""id"": ""40c1a8b7-410a-4df3-8419-b72b0b00b699"",
                     ""expectedControlType"": ""Button"",
@@ -197,7 +197,7 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Return"",
+                    ""action"": ""Enter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -215,7 +215,7 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
         // Console
         m_Console = asset.FindActionMap("Console", throwIfNotFound: true);
         m_Console_ToggleDebug = m_Console.FindAction("ToggleDebug", throwIfNotFound: true);
-        m_Console_Return = m_Console.FindAction("Return", throwIfNotFound: true);
+        m_Console_Enter = m_Console.FindAction("Enter", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -333,13 +333,13 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Console;
     private IConsoleActions m_ConsoleActionsCallbackInterface;
     private readonly InputAction m_Console_ToggleDebug;
-    private readonly InputAction m_Console_Return;
+    private readonly InputAction m_Console_Enter;
     public struct ConsoleActions
     {
         private @PlayerActionMaps m_Wrapper;
         public ConsoleActions(@PlayerActionMaps wrapper) { m_Wrapper = wrapper; }
         public InputAction @ToggleDebug => m_Wrapper.m_Console_ToggleDebug;
-        public InputAction @Return => m_Wrapper.m_Console_Return;
+        public InputAction @Enter => m_Wrapper.m_Console_Enter;
         public InputActionMap Get() { return m_Wrapper.m_Console; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -352,9 +352,9 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
                 @ToggleDebug.started -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnToggleDebug;
                 @ToggleDebug.performed -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnToggleDebug;
                 @ToggleDebug.canceled -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnToggleDebug;
-                @Return.started -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnReturn;
-                @Return.performed -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnReturn;
-                @Return.canceled -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnReturn;
+                @Enter.started -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_ConsoleActionsCallbackInterface.OnEnter;
             }
             m_Wrapper.m_ConsoleActionsCallbackInterface = instance;
             if (instance != null)
@@ -362,9 +362,9 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
                 @ToggleDebug.started += instance.OnToggleDebug;
                 @ToggleDebug.performed += instance.OnToggleDebug;
                 @ToggleDebug.canceled += instance.OnToggleDebug;
-                @Return.started += instance.OnReturn;
-                @Return.performed += instance.OnReturn;
-                @Return.canceled += instance.OnReturn;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
             }
         }
     }
@@ -379,6 +379,6 @@ public partial class @PlayerActionMaps : IInputActionCollection2, IDisposable
     public interface IConsoleActions
     {
         void OnToggleDebug(InputAction.CallbackContext context);
-        void OnReturn(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
     }
 }

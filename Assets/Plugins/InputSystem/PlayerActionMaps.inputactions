@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputActions",
+    "name": "PlayerActionMaps",
     "maps": [
         {
             "name": "PlayerMovement",
@@ -147,7 +147,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Return",
+                    "name": "Enter",
                     "type": "Button",
                     "id": "40c1a8b7-410a-4df3-8419-b72b0b00b699",
                     "expectedControlType": "Button",
@@ -175,7 +175,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Return",
+                    "action": "Enter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

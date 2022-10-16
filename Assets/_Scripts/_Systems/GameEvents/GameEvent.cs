@@ -27,4 +27,28 @@ namespace Project.Systems.GameEvents
             m_listeners.Remove(listener);
         }
     }
+    
+    public class GameEvent<T> : ScriptableObject
+    {
+        private HashSet<GameEventListener<T>> m_listeners = new HashSet<GameEventListener<T>>();
+
+        public void Invoke(T param)
+        {
+            foreach (var listener in m_listeners)
+            {
+                UnityEngine.Debug.Log("Event Raised");
+                listener.OnEventRaised(param);
+            }
+        }
+    
+        public void RegisterListener(GameEventListener<T> listener)
+        {
+            m_listeners.Add(listener);
+        }
+    
+        public void UnregisterListener(GameEventListener<T> listener)
+        {
+            m_listeners.Remove(listener);
+        }
+    }
 }
