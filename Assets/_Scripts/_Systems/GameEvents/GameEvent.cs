@@ -17,33 +17,29 @@ namespace Project.Systems.GameEvents
             }
         }
         
-        //we can dynamically pass porameters to UnityEvent and use this Invoke method instead of the "pure" one -- useful in e.g. debug console
         public void InvokeWithIntParam(int val)
         {
-            foreach (var listener in m_listeners)
+            foreach (var gameEventListener in m_listeners)
             {
+                var listener = gameEventListener as GameEventListenerInt;
                 UnityEngine.Debug.Log("Event Raised with params");
-                listener.OnEventRaisedWithParam(val);
+                listener.OnEventRaised(val);
             }
         }
         
         public void InvokeWithIntParam(string str)
         {
-            foreach (var listener in m_listeners)
+            foreach (var gameEventListener in m_listeners)
             {
+                var listener = gameEventListener as GameEventListenerStr;
                 UnityEngine.Debug.Log("Event Raised with params");
-                listener.OnEventRaisedWithParam(str);
+                listener.OnEventRaised(str);
             }
         }
     
-        public void RegisterListener(GameEventListener listener)
-        {
-            m_listeners.Add(listener);
-        }
-    
-        public void UnregisterListener(GameEventListener listener)
-        {
-            m_listeners.Remove(listener);
-        }
+        public void RegisterListener(GameEventListener listener)=> m_listeners.Add(listener);
+        
+        public void UnregisterListener(GameEventListener listener)=> m_listeners.Remove(listener);
+        
     }
 }

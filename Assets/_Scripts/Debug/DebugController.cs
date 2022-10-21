@@ -78,7 +78,6 @@ namespace Project.Debug
                 y += 100;
             }
             
-        
             GUI.Box(new Rect(0, y, Screen.width, 30), "");
             GUI.backgroundColor = new Color(0, 0, 0, 0);
             m_input = GUI.TextField(new Rect(10f, y + 5f, Screen.width - 20f, 100f), m_input);
@@ -105,7 +104,6 @@ namespace Project.Debug
             m_input = "";
         }
         
-        //TODO: Refactor this so it uses GameEvent instead of Action (not easy)  --- done
         private void InitCommands()
         {
             s_SPEED_UP = new DebugCommand<int>("speed_up", "Speeds up the character.", "speed_up <value>", (val) =>
