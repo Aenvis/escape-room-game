@@ -107,7 +107,7 @@ Material:
     - _BlendOp: 0
     - _BumpScale: 5
     - _ClearCoat: 1
-    - _ClearCoatMask: 0.621
+    - _ClearCoatMask: 0.662
     - _ClearCoatSmoothness: 0.615
     - _Cull: 2
     - _Cutoff: 0.5
@@ -127,7 +127,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.626
+    - _Smoothness: 0.659
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
