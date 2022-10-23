@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using UnityEditor.Build;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Project.Systems.GameEvents
 {
@@ -7,36 +11,18 @@ namespace Project.Systems.GameEvents
     public class GameEvent : ScriptableObject
     {
         private HashSet<GameEventListener> m_listeners = new HashSet<GameEventListener>();
-
-        public void Invoke()
+        
+        public void Invoke([CanBeNull] object param=null)
         {
             foreach (var listener in m_listeners)
             {
-                UnityEngine.Debug.Log("Event Raised");
-                listener.OnEventRaised();
-            }
-        }
-        
-        public void InvokeWithIntParam(int val)
-        {
-            foreach (var gameEventListener in m_listeners)
-            {
-                var listener = gameEventListener as GameEventListenerInt;
                 UnityEngine.Debug.Log("Event Raised with params");
-                listener.OnEventRaised(val);
+                if(param is int) listener.OnEventRaised((int)param!);
+                else if (param is string) listener.OnEventRaised((string)param!);
+                else listener.OnEventRaised();
             }
         }
-        
-        public void InvokeWithStrParam(string str)
-        {
-            foreach (var gameEventListener in m_listeners)
-            {
-                var listener = gameEventListener as GameEventListenerStr;
-                UnityEngine.Debug.Log("Event Raised with params");
-                listener.OnEventRaised(str);
-            }
-        }
-    
+
         public void RegisterListener(GameEventListener listener)=> m_listeners.Add(listener);
         
         public void UnregisterListener(GameEventListener listener)=> m_listeners.Remove(listener);

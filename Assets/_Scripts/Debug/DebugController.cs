@@ -74,7 +74,7 @@ namespace Project.Debug
                 for (int i = 0; i < m_commandList.Count; i++)
                 {
                     DebugCommandBase cmd = m_commandList[i] as DebugCommandBase;
-                    string label = $"{cmd.CommandFormat} -  {cmd.CommandDescription}";
+                    string label = $"{cmd!.CommandFormat} -  {cmd.CommandDescription}";
                     Rect labelRect = new Rect(5, 20 * i, viewPort.width - 100, 20);
                     GUI.Label(labelRect, label);
                 }
@@ -114,7 +114,7 @@ namespace Project.Debug
         {
             s_SPEED_UP = new DebugCommand<int>("speed_up", "Speeds up the character.", "speed_up <value>", (val) =>
             {
-                speedUp.InvokeWithIntParam(val);
+                speedUp.Invoke(val);
             });
             s_HELP = new DebugCommand("help", "Shows all available commands.", "help", () =>
             {
@@ -123,7 +123,7 @@ namespace Project.Debug
 
             s_ADD_ITEM = new DebugCommand<int>("add_item", "Adds an blank item to the player's inventory.", "add_item <value>", (val) =>
             {
-                addTestItem.InvokeWithIntParam(val);
+                addTestItem.Invoke(val);
             });
             
             //TODO: automize insertion of commands so we don't have to do it manually :(

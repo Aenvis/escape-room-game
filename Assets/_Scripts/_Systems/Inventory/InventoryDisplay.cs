@@ -28,9 +28,9 @@ namespace Project.Systems.Inventory
         
         #region debug
         #if UNITY_EDITOR
-        public void DEBUG_AddItem(int count)
+        public void DEBUG_AddItem(object count)
         {
-            for(int i = 0; i < count; i++) m_inventory.AddItem(new Item());
+            for(int i = 0; i < (int)count; i++) m_inventory.AddItem(new Item());
         }
         #endif
 			
