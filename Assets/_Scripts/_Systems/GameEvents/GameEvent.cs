@@ -27,7 +27,7 @@ namespace Project.Systems.GameEvents
             }
         }
         
-        public void InvokeWithIntParam(string str)
+        public void InvokeWithStrParam(string str)
         {
             foreach (var gameEventListener in m_listeners)
             {

@@ -266,7 +266,7 @@ namespace Project.Player
 			
 			#region debug
 			#if UNITY_EDITOR
-			public void SpeedUp(int val)
+			public void DEBUG_SpeedUp(int val)
 			{
 				UnityEngine.Debug.Log(val);
 				MoveSpeed += val;
