@@ -1,9 +1,6 @@
-using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using UnityEditor.Build;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Project.Systems.GameEvents
 {
@@ -17,9 +14,18 @@ namespace Project.Systems.GameEvents
             foreach (var listener in m_listeners)
             {
                 UnityEngine.Debug.Log("Event Raised with params");
-                if(param is int) listener.OnEventRaised((int)param!);
-                else if (param is string) listener.OnEventRaised((string)param!);
-                else listener.OnEventRaised();
+                switch (param)
+                {
+                    case int:
+                        listener.OnEventRaised((int)param!);
+                        break;
+                    case string:
+                        listener.OnEventRaised((string)param!);
+                        break;
+                    default:
+                        listener.OnEventRaised();
+                        break;
+                }
             }
         }
 
