@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Project.Systems.Inventory;
+using Zenject;
 
 namespace Project.Zenject
 {
@@ -7,6 +8,7 @@ namespace Project.Zenject
         public override void InstallBindings()
         {
             Container.Bind<PlayerActionMaps>().AsCached();
+            Container.Bind<Inventory>().AsCached();
         }
     }
 }

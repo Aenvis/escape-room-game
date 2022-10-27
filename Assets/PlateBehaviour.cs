@@ -23,13 +23,13 @@ public class PlateBehaviour : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.collider.CompareTag("Player")) return;
-        activatePlate.Invoke();
+        activatePlate.Invoke(null);
     }
 
     private void OnCollisionExit(Collision other)
     {
         if (!other.collider.CompareTag("Player")) return;
-        deactivatePlate.Invoke();
+        deactivatePlate.Invoke(null);
     }
 
     public void Activate()

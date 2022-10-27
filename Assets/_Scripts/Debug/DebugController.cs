@@ -16,16 +16,20 @@ namespace Project.Debug
         [SerializeField] private GameEvent enablePlayerMovement;
         [SerializeField] private GameEvent disablePlayerMovement;
         [SerializeField] private GameEvent speedUp;
+        [SerializeField] private GameEvent addTestItem;
         
         private static DebugCommand<int> s_SPEED_UP;
         private static DebugCommand s_HELP;
+        private static DebugCommand<int> s_ADD_ITEM;
 
         private bool m_showConsole;
         private bool m_showHelp;
         private string m_input;
         private PlayerActionMaps m_playerActionMaps;
 
-        private List<object> m_commandList = new List<object>();
+        private Stack<DebugCommand> m_lastCommads;
+
+        private List<object> m_commandList;
 
         [Inject]
         private void Injection(PlayerActionMaps playerInput)
@@ -35,6 +39,8 @@ namespace Project.Debug
         
         private void Awake()
         {
+            m_commandList = new List<object>();
+            m_lastCommads = new Stack<DebugCommand>();
             InitCommands();
         }
 
@@ -68,7 +74,7 @@ namespace Project.Debug
                 for (int i = 0; i < m_commandList.Count; i++)
                 {
                     DebugCommandBase cmd = m_commandList[i] as DebugCommandBase;
-                    string label = $"{cmd.CommandFormat} -  {cmd.CommandDescription}";
+                    string label = $"{cmd!.CommandFormat} -  {cmd.CommandDescription}";
                     Rect labelRect = new Rect(5, 20 * i, viewPort.width - 100, 20);
                     GUI.Label(labelRect, label);
                 }
@@ -108,16 +114,22 @@ namespace Project.Debug
         {
             s_SPEED_UP = new DebugCommand<int>("speed_up", "Speeds up the character.", "speed_up <value>", (val) =>
             {
-                speedUp.InvokeWithIntParam(val);
+                speedUp.Invoke(val);
             });
             s_HELP = new DebugCommand("help", "Shows all available commands.", "help", () =>
             {
                 m_showHelp = true;
             });
+
+            s_ADD_ITEM = new DebugCommand<int>("add_item", "Adds an blank item to the player's inventory.", "add_item <value>", (val) =>
+            {
+                addTestItem.Invoke(val);
+            });
             
             //TODO: automize insertion of commands so we don't have to do it manually :(
             m_commandList.Add(s_HELP);
             m_commandList.Add(s_SPEED_UP);
+            m_commandList.Add(s_ADD_ITEM);
         }
         
         private void HandleInput()
