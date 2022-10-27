@@ -71,12 +71,12 @@ namespace Project.Behaviors
             }
         }
         
-        public void Open()
+        private void Open()
         {
             transform.DORotate(new Vector3(0, -openAngle, 0), openDuration, RotateMode.Fast);
         }
 
-        public void Close()
+        private void Close()
         {
             transform.DORotate(new Vector3(0, 0, 0), openDuration, RotateMode.Fast);
         }
