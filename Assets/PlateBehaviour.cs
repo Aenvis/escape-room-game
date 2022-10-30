@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Project.Systems.GameEvents;
 using UnityEngine;
+using Project.Systems.GameEvents;
 
 public class PlateBehaviour : MonoBehaviour
 {
@@ -21,13 +23,13 @@ public class PlateBehaviour : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.collider.CompareTag("Player")) return;
-        activatePlate.Invoke();
+        activatePlate.Invoke(null);
     }
 
     private void OnCollisionExit(Collision other)
     {
         if (!other.collider.CompareTag("Player")) return;
-        deactivatePlate.Invoke();
+        deactivatePlate.Invoke(null);
     }
 
     public void Activate()
