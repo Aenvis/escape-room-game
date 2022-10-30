@@ -25,6 +25,11 @@ public class MainMenu : MonoBehaviour
       SceneManager.LoadScene("MainMenu");
    }
 
+   public void GoToCredis()
+   {
+      SceneManager.LoadScene("Credis");
+   }
+
    public void QuitGame()
    {
       Application.Quit();
