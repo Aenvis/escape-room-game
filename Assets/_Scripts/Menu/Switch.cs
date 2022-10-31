@@ -31,10 +31,10 @@ namespace Project
                     if (i < 0)
                         index = 5;
 
-                    UnityEngine.Debug.Log("Update");
+                    UnityEngine.Debug.Log("Update Image");
                 }
             
-            
+
         }
     }
 }
