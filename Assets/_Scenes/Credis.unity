@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 460661435}
   - component: {fileID: 460661436}
   m_Layer: 5
-  m_Name: Animation
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
