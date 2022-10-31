@@ -26,10 +26,9 @@ namespace Project
                     background[i].gameObject.SetActive(false);
                     background[index].gameObject.SetActive(true);
 
-                    if (i >= 5)
+                    if (i == 6)
                         index = 0;
-                    if (i < 0)
-                        index = 5;
+                        i = 0;
 
                     UnityEngine.Debug.Log("Update Image");
                 }
