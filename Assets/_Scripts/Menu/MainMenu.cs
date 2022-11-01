@@ -30,9 +30,9 @@ public class MainMenu : MonoBehaviour
       SceneManager.LoadScene("MainMenu");
    }
 
-   public void GoToCredis()
+   public void GoToCredits()
    {
-      SceneManager.LoadScene("Credis");
+      SceneManager.LoadScene("Credits");
    }
 
    public void QuitGame()
