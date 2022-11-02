@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ScrenOne
-  m_Shader: {fileID: -6465566751694194690, guid: 516af687a2e17a6469e93be612039050, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 208efd7418c3360499e8f474501cb247, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -75,12 +75,28 @@ Material:
         m_Texture: {fileID: 2800000, guid: 18670dc8bd7bd4d4a8764ea0a0790dce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b9bc63306d5f4cceaac09b54ccc87f55_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 18670dc8bd7bd4d4a8764ea0a0790dce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_cf211c8fe7704e9b92ccd807bc16e714_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 18670dc8bd7bd4d4a8764ea0a0790dce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_db6e19f92b104fb6a987da3bc4fc4934_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 18670dc8bd7bd4d4a8764ea0a0790dce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ed4bb77956e24917a9a865e1aae320a4_Texture_1:
         m_Texture: {fileID: 2800000, guid: 18670dc8bd7bd4d4a8764ea0a0790dce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: 98fd48f8fcd36b74ab62936d0d9ce3b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -131,6 +147,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Scale: {r: 1, g: 1.15, b: 0, a: 0}
     - _Size: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
