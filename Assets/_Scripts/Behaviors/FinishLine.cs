@@ -13,7 +13,7 @@ namespace Project
         {
             if(!collider.CompareTag("Player")) return;
             
-            SceneManager.LoadScene("Credis");
+            SceneManager.LoadScene("Credits");
         }
         
     }
