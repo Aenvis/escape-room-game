@@ -1,4 +1,4 @@
-﻿using Project.Systems.Inventory;
+﻿using Project.Systems.Equipment;
 using Zenject;
 
 namespace Project.Zenject
