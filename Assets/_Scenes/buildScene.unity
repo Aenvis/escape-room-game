@@ -2868,15 +2868,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 16
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 129.1
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
-      value: 169.67245
+      value: 113.78873
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_RenderMode
@@ -2888,7 +2888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 148.73436
+      value: 92.85062
       objectReference: {fileID: 0}
     - target: {fileID: 2554548438875980887, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3410,7 +3410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 60
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -3446,7 +3446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.33
+      value: -34.29
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3454,7 +3454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.73
+      value: -8.89
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8932,11 +8932,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 15.01
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 90
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -27940,11 +27940,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 70
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -28432,11 +28432,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8680155736993841816, guid: a4df15b215c391144a9e9db27893ab0a, type: 3}
   m_PrefabInstance: {fileID: 2053176857}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &994206646 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-  m_PrefabInstance: {fileID: 1941218122}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &996003976 stripped
 Transform:
@@ -34453,11 +34448,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 13.81
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 260.6
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -37544,11 +37539,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 60
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -37584,7 +37579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -49.12
+      value: -49.21
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37592,7 +37587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.73
+      value: -8.97
       objectReference: {fileID: 0}
     - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39751,7 +39746,6 @@ Transform:
   - {fileID: 432133388}
   - {fileID: 1244124639}
   - {fileID: 1337462152}
-  - {fileID: 994206646}
   - {fileID: 606037371}
   - {fileID: 632818876}
   - {fileID: 1605492627}
@@ -44849,7 +44843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783057526197157359, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_Range
-      value: 50
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 783057526197157359, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_Enabled
@@ -44857,7 +44851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783057526197157359, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_Intensity
-      value: 18.62
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 783057526197157359, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_SpotAngle
@@ -44885,7 +44879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783057526197157359, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_BounceIntensity
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 783057526197157359, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -44965,7 +44959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050899311046725211, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_Range
-      value: 50
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5050899311046725211, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_Enabled
@@ -44973,7 +44967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050899311046725211, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_Intensity
-      value: 18.62
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5050899311046725211, guid: 49081a0037467ab4bb2b561a725ae83b, type: 3}
       propertyPath: m_SpotAngle
@@ -48473,11 +48467,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 70
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -48652,11 +48646,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 14.35
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 129.1
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
@@ -49791,113 +49785,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8176525892984710341, guid: 689a93e5749955e48b2ef0f10412caf8, type: 3}
   m_PrefabInstance: {fileID: 1396949280}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1941218122
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 1473998416}
-    m_Modifications:
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Range
-      value: 15.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Intensity
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_SpotAngle
-      value: 163.64769
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_InnerSpotAngle
-      value: 134.1503
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Shadows.m_Bias
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0.536
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Shadows.m_NearPlane
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Shadows.m_NormalBias
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2554548438875980887, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2741422270032120755, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_Name
-      value: LightBulb (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -56.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260797081009017097, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4396397423083963067, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 64
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
 --- !u!1001 &1944572263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52376,15 +52263,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 35.22
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 60
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
-      value: 154.1265
+      value: 128.72922
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_RenderMode
@@ -52396,7 +52283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 144.29268
+      value: 118.8954
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -54363,11 +54250,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Range
-      value: 15.01
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_Intensity
-      value: 90
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1742585648152734889, guid: 96598421a74b6c54799804e8ffc8da2d, type: 3}
       propertyPath: m_SpotAngle
