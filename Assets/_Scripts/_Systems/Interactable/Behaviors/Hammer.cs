@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Project.Consts;
+using UnityEngine;
 
 namespace Project.Systems.Interactable
 {
@@ -6,7 +7,7 @@ namespace Project.Systems.Interactable
     {
         protected override void SetName()
         {
-            Name = "hammer";
+            Name = ItemName.hammer;
         }
     }
 }

@@ -803,6 +803,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6795091278675009961, guid: 3f3e394584231ec49a37bf8614eb4fdd, type: 3}
   m_PrefabInstance: {fileID: 555613831}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &30131972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6570858464822531522, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
+  m_PrefabInstance: {fileID: 650837582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &30131979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30131972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d3cabe4aafe5f4096d23fb336c4817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDistance: 5
+  openAngle: 90
+  openDuration: 1.5
+  quest: {fileID: 11400000, guid: 9340abc38c3d8b34ca3ab3ab4088ee04, type: 2}
 --- !u!1001 &31146972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5439,6 +5460,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 131951934}
     m_Modifications:
+    - target: {fileID: 526707283, guid: 98f471e853141174395411acb42dc984, type: 3}
+      propertyPath: playerDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1666480638979097680, guid: 98f471e853141174395411acb42dc984, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.04
@@ -17681,14 +17706,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 131951934}
     m_Modifications:
-    - target: {fileID: 3317317782000902640, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f757d469784ce1a478c6d5b254271abc, type: 2}
-    - target: {fileID: 4903358932732542241, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f757d469784ce1a478c6d5b254271abc, type: 2}
     - target: {fileID: 7088818652244571578, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
       propertyPath: m_Name
       value: MetalicDoor (4)
@@ -17696,18 +17713,6 @@ PrefabInstance:
     - target: {fileID: 7344299270647024705, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7344299270647024705, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7344299270647024705, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.60000014
-      objectReference: {fileID: 0}
-    - target: {fileID: 7344299270647024705, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7344299270647024705, guid: d6896100c7c24a94d8d6a40e13ac00d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43246,21 +43251,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1289133643179510305, guid: 98f471e853141174395411acb42dc984, type: 3}
   m_PrefabInstance: {fileID: 258953179}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2051119634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051119632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d3cabe4aafe5f4096d23fb336c4817, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDistance: 0
-  openAngle: 0
-  openDuration: 0
 --- !u!114 &2051119635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43277,7 +43267,7 @@ MonoBehaviour:
   voidResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051119634}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Project.Behaviors.Door, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -43306,7 +43296,7 @@ MonoBehaviour:
   voidResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051119634}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Project.Behaviors.Door, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 1

@@ -1,5 +1,6 @@
 ﻿using System;
 using Palmmedia.ReportGenerator.Core;
+using Project.Consts;
 using Project.Systems.Equipment;
 using UnityEngine;
 using Zenject;
@@ -8,7 +9,7 @@ namespace Project.Systems.Interactable
 {
     public abstract class Usable : Interactable
     {
-        protected string Name;
+        protected ItemName Name;
         
         private Inventory m_inventory;
 
@@ -32,9 +33,9 @@ namespace Project.Systems.Interactable
         
         /// <summary>
         /// Add item's name via this method using the following command:
-        /// m_name = name;
-        /// where name is object's in-game name (e.g. "wrench", "hammer")
-        /// !!!Use lowercase only!!!
+        /// m_name = ItemName.name;
+        /// where name is object's in-game name (e.g. wrench, hammer)
+        /// ItemName is an enum class (you can find int at _Scripts/Consts)
         /// </summary>
         protected abstract void SetName();
     }

@@ -1,7 +1,8 @@
-﻿namespace Project._Scripts.Consts
+﻿namespace Project.Consts
 {
-    public enum ItemType
+    public enum ItemName
     {
-        
+        wrench,
+        hammer
     }
 }

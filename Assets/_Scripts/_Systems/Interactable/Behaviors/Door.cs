@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using Project.Systems.GameEvents;
+using JetBrains.Annotations;
+using Project.Systems.Equipment;
+using Project.Systems.Quest;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Project.Systems.Interactable
@@ -13,9 +12,23 @@ namespace Project.Systems.Interactable
     {
         [SerializeField] private float openAngle;
         [SerializeField] private float openDuration;
+        [SerializeField] [CanBeNull] private QuestData quest;
 
-        private bool m_isOpen = false;
+        private Inventory m_inventory;
+        private bool m_isOpen;
 
+        [Inject]
+        private void Injection(Inventory inventory)
+        {
+            m_inventory = inventory;
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            if(quest != null) quest.Completed = false;
+        }
+        
         private void Open()
         {
             transform.DORotate(new Vector3(0, -openAngle, 0), openDuration, RotateMode.Fast);
@@ -28,6 +41,23 @@ namespace Project.Systems.Interactable
 
         protected override void Interaction()
         {
+            if (quest != null)
+            {
+                if (!quest.Completed)
+                {
+                    if (m_inventory.Contains(quest.GetRequiredItem()))
+                    {
+                        m_inventory.RemoveItem(quest.GetRequiredItem());
+                        quest.Completed = true;
+                    }
+                    else
+                    {
+                        Debug.Log(quest.GetText());
+                        return;
+                    }
+                }
+            }
+
             if (!m_isOpen)
             {
                 m_isOpen = true;
