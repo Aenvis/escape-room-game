@@ -1,4 +1,4 @@
-﻿namespace Project.Debug
+﻿namespace Project.DebugConsole
 {
     public class DebugCommandBase
     {

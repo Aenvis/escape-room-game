@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace Project.Systems.Inventory
+namespace Project.Systems.Equipment
 {
     public class Inventory
     {
@@ -24,6 +24,8 @@ namespace Project.Systems.Inventory
             m_inventory.Remove(item); 
         }
 
+        public Item GetItemAt(int id) => m_inventory[id];
+        
         public int GetCount() => m_inventory.Count;
     }
 }

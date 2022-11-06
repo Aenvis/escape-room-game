@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Project
+namespace Project.Systems.Interactable
 {
     public class FinishLine : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project.Debug
+namespace Project.DebugConsole
 {
     public class DebugCommand : DebugCommandBase
     {

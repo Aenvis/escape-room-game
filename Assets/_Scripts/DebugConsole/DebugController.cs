@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Zenject;
 
-namespace Project.Debug
+namespace Project.DebugConsole
 {
     public class DebugController : MonoBehaviour
     {

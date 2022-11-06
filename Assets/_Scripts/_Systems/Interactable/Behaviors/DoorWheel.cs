@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Project.Behaviors
+namespace Project.Systems.Interactable
 {
     public class DoorWheel : MonoBehaviour
     {

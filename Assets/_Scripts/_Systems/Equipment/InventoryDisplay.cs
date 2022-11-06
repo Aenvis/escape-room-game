@@ -1,17 +1,24 @@
 ﻿using System;
-using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
-namespace Project.Systems.Inventory
+namespace Project.Systems.Equipment
 {
     public class InventoryDisplay : MonoBehaviour
     {
+        [SerializeField] private ItemIconData iconData;
+
         private Inventory m_inventory;
+        
         [Inject]
         private void Injection(Inventory inventory)
         {
             m_inventory = inventory;
+        }
+
+        private void Start()
+        {
+            iconData.Init();
         }
 
         private void OnGUI()
@@ -19,10 +26,14 @@ namespace Project.Systems.Inventory
             int itemCount = m_inventory.GetCount();
             if (m_inventory.GetCount() <= 0) return;
 
-            float x = Screen.width - 60f;
-            float y = (Screen.height / 2f) - (itemCount * 50f)/2;
-            
-            GUI.Box(new Rect(x, y, 50f, itemCount * 50f), "");
+            float x = Screen.width - 70f;
+            float y = (Screen.height / 2f) - (itemCount * 64f)/2;
+
+            for (int i = 0; i < m_inventory.GetCount(); i++)
+            {
+                Item currItem = m_inventory.GetItemAt(i);
+                GUI.DrawTexture(new Rect(x, y+(i*64f), 64f, 64f), iconData.GetTexture(currItem.Name));
+            }
             GUI.backgroundColor = new Color(0, 0, 0, 0);
         }
         
