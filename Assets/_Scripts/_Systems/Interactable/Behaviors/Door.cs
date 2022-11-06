@@ -13,15 +13,8 @@ namespace Project.Systems.Interactable
         [SerializeField] private float openAngle;
         [SerializeField] private float openDuration;
 
-        private Inventory m_inventory;
         private bool m_isOpen;
-
-        [Inject]
-        private void Injection(Inventory inventory)
-        {
-            m_inventory = inventory;
-        }
-
+        
         private void Open()
         {
             transform.DORotate(new Vector3(0, -openAngle, 0), openDuration, RotateMode.Fast);

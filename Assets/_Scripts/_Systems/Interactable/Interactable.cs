@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using JetBrains.Annotations;
 using Project.Systems.Equipment;
 using Project.Systems.Quest;
@@ -16,10 +17,10 @@ namespace Project.Systems.Interactable
         private Transform m_playerTransform;
         private PlayerActionMaps m_playerInput;
         private Inventory m_inventory;
-        
         private bool m_canInteract = true;
+        private float m_questInfoTimer;
+        private float m_questInfoTimerMax = 3f;
         
-
         [Inject]
         private void Inject(PlayerActionMaps playerActionMaps, Inventory inventory)
         {
@@ -38,7 +39,14 @@ namespace Project.Systems.Interactable
             m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             if(quest != null) quest.Completed = false;
         }
-        
+
+        private void Update()
+        {
+            if (m_questInfoTimer <= 0) return;
+
+            m_questInfoTimer -= Time.deltaTime;
+        }
+
         protected virtual void OnDisable()
         {   //we dont want to disable action map after one object is deleted - it cuts all the interactions
             m_playerInput.Interactions.Interact.performed -= OnInteractKey;
@@ -53,33 +61,41 @@ namespace Project.Systems.Interactable
         {
             m_canInteract = false;
         }
-        
+
+        private void OnGUI()
+        {
+           if (m_questInfoTimer <= 0 || quest is null) return;
+
+                float x = Screen.width / 2f - 300f;
+                float y = Screen.height - 110f;
+                GUIStyle style = new GUIStyle(GUI.skin.box);
+                style.fontSize = 25;
+                style.normal.textColor = Color.white;
+                GUI.TextArea(new Rect(x, y, 600, 45), quest.GetText(), style);
+        }
+
         protected virtual void OnInteractKey(InputAction.CallbackContext context)
         {
             if(!m_canInteract || Vector3.Distance(transform.position, m_playerTransform.position) > playerDistance) return;
 
-            CheckQuest();
-            Interaction();
+            if(CheckQuest()) Interaction();
         }
 
-        private void CheckQuest()
+        private bool CheckQuest()
         {
-            if (quest is not null)
+            if (quest is null) return true;
+
+            if (quest.Completed) return true;
+
+            if (m_inventory.Contains(quest.GetRequiredItem()))
             {
-                if (!quest.Completed)
-                {
-                    if (m_inventory.Contains(quest.GetRequiredItem()))
-                    {
-                        m_inventory.RemoveItem(quest.GetRequiredItem());
-                        quest.Completed = true;
-                    }
-                    else
-                    {
-                        Debug.Log(quest.GetText());
-                        return;
-                    }
-                }
+                m_inventory.RemoveItem(quest.GetRequiredItem());
+                quest.Completed = true;
+                return true;
             }
+
+            m_questInfoTimer = m_questInfoTimerMax;
+            return false;
         }
         
         protected abstract void Interaction();

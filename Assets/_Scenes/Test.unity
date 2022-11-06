@@ -820,10 +820,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d3cabe4aafe5f4096d23fb336c4817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 9340abc38c3d8b34ca3ab3ab4088ee04, type: 2}
   playerDistance: 5
   openAngle: 90
   openDuration: 1.5
-  quest: {fileID: 11400000, guid: 9340abc38c3d8b34ca3ab3ab4088ee04, type: 2}
 --- !u!1001 &31146972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17630,6 +17630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb146d7c22e4dad85ebe50d2e11ff9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: {fileID: 0}
   playerDistance: 5
 --- !u!1001 &648394520
 PrefabInstance:
@@ -35257,6 +35258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa9a5a6305a4b5c910f8383a460bed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: {fileID: 0}
   playerDistance: 5
 --- !u!4 &1591565447 stripped
 Transform:
@@ -45450,7 +45452,7 @@ MonoBehaviour:
   Damping: {x: 0, y: 0, z: 0}
   ShoulderOffset: {x: 0, y: 0, z: 0}
   VerticalArmLength: 0
-  CameraSide: 0.6
+  CameraSide: 0.24
   CameraDistance: 0
   CameraCollisionFilter:
     serializedVersion: 2
@@ -45516,7 +45518,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 913116148}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -45726,7 +45728,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 32.96973
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -45735,7 +45737,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 40
+  field of view: 70
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
