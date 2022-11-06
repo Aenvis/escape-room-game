@@ -3,6 +3,7 @@
     public enum ItemName
     {
         wrench,
-        hammer
+        hammer,
+        fuse
     }
 }
