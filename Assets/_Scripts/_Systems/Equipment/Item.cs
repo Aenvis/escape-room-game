@@ -9,7 +9,7 @@ namespace Project.Systems.Equipment
         public ItemName Name { get; private set; }
         public Item(ItemName? name=null)
         {
-            if (name != null) Name = (ItemName)name;
+            if (name is not null) Name = (ItemName)name;
         }
     }
 }
