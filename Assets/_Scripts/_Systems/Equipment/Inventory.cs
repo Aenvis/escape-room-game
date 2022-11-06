@@ -1,6 +1,7 @@
 ﻿// ReSharper disable once CheckNamespace
-
 using System.Collections.Generic;
+using System.Linq;
+using Project.Consts;
 
 namespace Project.Systems.Equipment
 {
@@ -19,12 +20,20 @@ namespace Project.Systems.Equipment
             m_inventory.Add(item);
         }
 
-        public void RemoveItem(Item item)
+        public void RemoveItem(ItemName itemName)
         {
-            m_inventory.Remove(item); 
+            foreach (var item in m_inventory)
+            {
+                if (item is null || item.Name != itemName) continue;
+                m_inventory.Remove(item);
+                break;
+            }
         }
-
+        
         public Item GetItemAt(int id) => m_inventory[id];
+
+        public bool Contains(ItemName itemName) => m_inventory.Any(item => item.Name == itemName);
+        
         
         public int GetCount() => m_inventory.Count;
     }

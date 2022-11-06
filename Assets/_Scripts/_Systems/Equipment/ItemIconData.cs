@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Project.Consts;
 using UnityEngine;
 
 namespace Project.Systems.Equipment
@@ -8,15 +9,15 @@ namespace Project.Systems.Equipment
     public class ItemIconData : ScriptableObject
     {
         [Serializable]
-        struct itemIcon
+        private struct ItemIcon
         {
-            public string name;
+            public ItemName name;
             public Texture texture;
         }
 
-        [SerializeField] private List<itemIcon> data;
+        [SerializeField] private List<ItemIcon> data;
         
-        private Dictionary<string, Texture> m_texture = new Dictionary<string, Texture>();
+        private Dictionary<ItemName, Texture> m_texture = new Dictionary<ItemName, Texture>();
 
         public void Init()
         {
@@ -26,6 +27,6 @@ namespace Project.Systems.Equipment
             }
         }
 
-        public Texture GetTexture(string name) => m_texture[name];
+        public Texture GetTexture(ItemName itemName) => m_texture[itemName];
     }
 }

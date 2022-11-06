@@ -1,15 +1,15 @@
 ﻿using System.Net.Mime;
-using Project._Scripts.Consts;
+using Project.Consts;
 using UnityEngine;
 
 namespace Project.Systems.Equipment
 {
     public class Item
     {
-        public string Name { get; private set; }
-        public Item(string name=null)
+        public ItemName Name { get; private set; }
+        public Item(ItemName? name=null)
         {
-            Name = name;
+            if (name is not null) Name = (ItemName)name;
         }
     }
 }
