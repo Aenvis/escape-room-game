@@ -8,9 +8,9 @@ using Zenject;
 
 namespace Project.Systems.Interactable
 {
-    public abstract class Usable : Interactable
+    public class UsableItem : Interactable
     {
-        protected ItemName Name;
+        [SerializeField]private ItemName name;
         
         private Inventory m_inventory;
         private Outline m_outline;
@@ -25,7 +25,6 @@ namespace Project.Systems.Interactable
         protected override void Start()
         {
             base.Start();
-            SetName();
             m_outline = gameObject.AddComponent<Outline>();
             m_outline.OutlineMode = Outline.Mode.OutlineAll;
             m_outline.OutlineColor = new Color(0, 127, 127);
@@ -36,6 +35,7 @@ namespace Project.Systems.Interactable
         protected override void OnMouseOver()
         {
             base.OnMouseOver();
+            if (Vector3.Distance(transform.position, m_playerTransform.position) > playerDistance) return;
             m_outline.enabled = true;
         }
 
@@ -47,16 +47,8 @@ namespace Project.Systems.Interactable
 
         protected override void Interaction()
         {
-            m_inventory.AddItem(new Item(Name));
+            m_inventory.AddItem(new Item(name));
             Destroy(gameObject);
         }
-        
-        /// <summary>
-        /// Add item's name via this method using the following command:
-        /// m_name = ItemName.name;
-        /// where name is object's in-game name (e.g. wrench, hammer)
-        /// ItemName is an enum class (you can find int at _Scripts/Consts)
-        /// </summary>
-        protected abstract void SetName();
     }
 }

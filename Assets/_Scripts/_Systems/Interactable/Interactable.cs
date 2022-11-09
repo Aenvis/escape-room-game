@@ -12,9 +12,9 @@ namespace Project.Systems.Interactable
     public abstract class Interactable : MonoBehaviour
     {
         [SerializeField] [CanBeNull] private QuestData quest;
-        [SerializeField] private float playerDistance;
+        [SerializeField] protected float playerDistance;
         
-        private Transform m_playerTransform;
+        protected Transform m_playerTransform;
         private PlayerActionMaps m_playerInput;
         private Inventory m_inventory;
         private bool m_canInteract = true;
