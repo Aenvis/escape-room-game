@@ -52,12 +52,12 @@ namespace Project.Systems.Interactable
             m_playerInput.Interactions.Interact.performed -= OnInteractKey;
         }
 
-        private void OnMouseOver()
+        protected virtual void OnMouseOver()
         {
             m_canInteract = true;
         }
 
-        private void OnMouseExit()
+        protected virtual void OnMouseExit()
         {
             m_canInteract = false;
         }
