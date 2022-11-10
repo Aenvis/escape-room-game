@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Project
 {
-    public class PostCreditActions : MonoBehaviour
+    public class PostCreditsActions : MonoBehaviour
     {
         [SerializeField] private Animator animator;
 
