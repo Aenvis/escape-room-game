@@ -4347,7 +4347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585165199870005253, guid: 2167e69559c70ee478539e7dc0b1e3d2, type: 3}
       propertyPath: m_text
-      value: Fullccreen
+      value: Fullscreen
       objectReference: {fileID: 0}
     - target: {fileID: 3585165199870005253, guid: 2167e69559c70ee478539e7dc0b1e3d2, type: 3}
       propertyPath: m_fontColor.b
