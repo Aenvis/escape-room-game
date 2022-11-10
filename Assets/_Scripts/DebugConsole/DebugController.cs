@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Project.Systems.GameEvents;
-using StarterAssets;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Project.DebugConsole

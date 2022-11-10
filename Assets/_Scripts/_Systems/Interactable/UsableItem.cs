@@ -1,8 +1,5 @@
-﻿using System;
-using Palmmedia.ReportGenerator.Core;
-using Project.Consts;
+﻿using Project.Consts;
 using Project.Systems.Equipment;
-using UnityEditor.Build;
 using UnityEngine;
 using Zenject;
 

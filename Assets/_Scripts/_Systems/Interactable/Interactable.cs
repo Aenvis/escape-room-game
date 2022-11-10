@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using Project.Systems.Equipment;
 using Project.Systems.Quest;
 using Project.Systems.SoundSystem;

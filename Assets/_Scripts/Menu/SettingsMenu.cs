@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-
 namespace Project
 {
     public class SettingsMenu : MonoBehaviour

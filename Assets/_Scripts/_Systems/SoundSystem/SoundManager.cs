@@ -1,6 +1,5 @@
 ﻿using Unity.Mathematics;
 using UnityEngine;
-using Zenject;
 
 namespace Project.Systems.SoundSystem
 {

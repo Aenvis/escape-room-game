@@ -1,5 +1,4 @@
-﻿using System;
-using Project.Systems.Equipment;
+﻿using Project.Systems.Equipment;
 using Project.Systems.SoundSystem;
 using UnityEngine;
 using Zenject;
