@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/TestBartek.unity
     guid: c0d69d226d761be4ca17496ab8a1b17c
-  - enabled: 0
-    path: Assets/_Scenes/devEventSystem.unity
-    guid: 95f36c60d976cae44a3f96de565746f2
   - enabled: 1
     path: Assets/_Scenes/StartMenu.unity
     guid: cd8907d4360c2c3439f603eb9ce76eec
