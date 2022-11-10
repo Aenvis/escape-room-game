@@ -149,6 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5358113183238102010}
   - component: {fileID: 526707283}
+  - component: {fileID: 7415468176758182552}
   m_Layer: 0
   m_Name: Rotate
   m_TagString: Untagged
@@ -163,7 +164,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289133643179510305}
-  m_LocalRotation: {x: 0, y: -0.6151111, z: 0, w: 0.7884404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.07428836, y: 2.298, z: -1.645}
   m_LocalScale: {x: 1.2048193, y: 1.2048193, z: 1.2048193}
   m_ConstrainProportionsScale: 0
@@ -173,7 +174,7 @@ Transform:
   - {fileID: 5294498236680730036}
   m_Father: {fileID: 7437182739192854379}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: -75.92, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &526707283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,9 +188,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 0}
-  playerDistance: 3.5
+  playerDistance: 5
+  soundEffect: {fileID: 8300000, guid: d72768e8fa46dce4db0bd295b6a10d7b, type: 3}
   openAngle: 75
   openDuration: 1.5
+--- !u!65 &7415468176758182552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289133643179510305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35899496, y: 3.7898312, z: 2.8171334}
+  m_Center: {x: -0.051919878, y: 0.1773892, z: 1.360079}
 --- !u!1 &1986361991649259440
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +462,7 @@ Transform:
   - {fileID: 1666480638979097680}
   - {fileID: 5358113183238102010}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8121369940212974189
 GameObject:
@@ -460,7 +475,6 @@ GameObject:
   - component: {fileID: 311044836208277039}
   - component: {fileID: 1209932785197277409}
   - component: {fileID: 1979490068414157404}
-  - component: {fileID: 6609777812620066692}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -533,17 +547,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6609777812620066692
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8121369940212974189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2619086233303812490, guid: 62a9deed5b3f016479c5009a0ec409f9, type: 3}
