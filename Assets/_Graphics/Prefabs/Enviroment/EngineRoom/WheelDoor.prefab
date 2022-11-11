@@ -188,7 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 0}
-  playerDistance: 3.5
+  playerDistance: 5
+  soundEffect: {fileID: 8300000, guid: d72768e8fa46dce4db0bd295b6a10d7b, type: 3}
   openAngle: 75
   openDuration: 1.5
 --- !u!65 &7415468176758182552
@@ -461,7 +462,7 @@ Transform:
   - {fileID: 1666480638979097680}
   - {fileID: 5358113183238102010}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8121369940212974189
 GameObject:

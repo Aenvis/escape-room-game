@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using Project.Systems.Equipment;
 using Project.Systems.Quest;
+using Project.Systems.SoundSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -12,20 +11,24 @@ namespace Project.Systems.Interactable
     public abstract class Interactable : MonoBehaviour
     {
         [SerializeField] [CanBeNull] private QuestData quest;
-        [SerializeField] private float playerDistance;
+        [SerializeField] protected float playerDistance;
+        [SerializeField] private AudioClip soundEffect;
         
-        private Transform m_playerTransform;
+        
+        protected Transform m_playerTransform;
         private PlayerActionMaps m_playerInput;
         private Inventory m_inventory;
+        private SoundManager m_soundManager;
         private bool m_canInteract = true;
         private float m_questInfoTimer;
         private float m_questInfoTimerMax = 3f;
         
         [Inject]
-        private void Inject(PlayerActionMaps playerActionMaps, Inventory inventory)
+        private void Inject(PlayerActionMaps playerActionMaps, Inventory inventory, SoundManager soundManager)
         {
             m_playerInput = playerActionMaps;
             m_inventory = inventory;
+            m_soundManager = soundManager;
         }
 
         protected virtual void OnEnable()
@@ -52,12 +55,12 @@ namespace Project.Systems.Interactable
             m_playerInput.Interactions.Interact.performed -= OnInteractKey;
         }
 
-        private void OnMouseOver()
+        protected virtual void OnMouseOver()
         {
             m_canInteract = true;
         }
 
-        private void OnMouseExit()
+        protected virtual void OnMouseExit()
         {
             m_canInteract = false;
         }
@@ -68,9 +71,14 @@ namespace Project.Systems.Interactable
 
                 float x = Screen.width / 2f - 300f;
                 float y = Screen.height - 110f;
-                GUIStyle style = new GUIStyle(GUI.skin.box);
-                style.fontSize = 25;
-                style.normal.textColor = Color.white;
+                GUIStyle style = new GUIStyle(GUI.skin.box)
+                {
+                    fontSize = 25,
+                    normal =
+                    {
+                        textColor = Color.white
+                    }
+                };
                 GUI.TextArea(new Rect(x, y, 600, 45), quest.GetText(), style);
         }
 
@@ -79,6 +87,7 @@ namespace Project.Systems.Interactable
             if(!m_canInteract || Vector3.Distance(transform.position, m_playerTransform.position) > playerDistance) return;
 
             if(CheckQuest()) Interaction();
+            m_soundManager.PlaySoundEffect(gameObject, soundEffect);
         }
 
         private bool CheckQuest()

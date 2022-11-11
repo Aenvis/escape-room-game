@@ -1,10 +1,5 @@
-using System;
 using DG.Tweening;
-using JetBrains.Annotations;
-using Project.Systems.Equipment;
-using Project.Systems.Quest;
 using UnityEngine;
-using Zenject;
 
 namespace Project.Systems.Interactable
 {

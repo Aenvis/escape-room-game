@@ -1,6 +1,4 @@
-﻿using System.Net.Mime;
-using Project.Consts;
-using UnityEngine;
+﻿using Project.Consts;
 
 namespace Project.Systems.Equipment
 {
