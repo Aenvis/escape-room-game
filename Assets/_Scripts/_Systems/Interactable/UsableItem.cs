@@ -7,7 +7,7 @@ namespace Project.Systems.Interactable
 {
     public class UsableItem : Interactable
     {
-        [SerializeField]private ItemName name;
+        [SerializeField]private new ItemName name;
         
         private Inventory m_inventory;
         private Outline m_outline;
@@ -22,11 +22,13 @@ namespace Project.Systems.Interactable
         protected override void Start()
         {
             base.Start();
-            m_outline = gameObject.AddComponent<Outline>();
-            m_outline.OutlineMode = Outline.Mode.OutlineAll;
-            m_outline.OutlineColor = new Color(0, 127, 127);
-            m_outline.OutlineWidth = 7.0f;
-            m_outline.enabled = false;
+            OutlineSetup();
+            const string sfxName = "collect item";
+            soundEffect = Resources.Load($"{sfxName}") as AudioClip;
+            #if UNITY_EDITOR
+            if (!soundEffect) 
+                Debug.LogError($"COULDN'T LOAD RESOURCE: {sfxName} in {gameObject.name}");
+            #endif
         }
 
         protected override void OnMouseOver()
@@ -42,10 +44,21 @@ namespace Project.Systems.Interactable
             m_outline.enabled = false;
         }
 
+        private void OutlineSetup()
+        {
+            m_outline = gameObject.AddComponent<Outline>();
+            m_outline.OutlineMode = Outline.Mode.OutlineAll;
+            m_outline.OutlineColor = new Color(0, 127, 127);
+            m_outline.OutlineWidth = 7.0f;
+            m_outline.enabled = false;  
+        }
+        
         protected override void Interaction()
         {
             m_inventory.AddItem(new Item(name));
-            Destroy(gameObject);
+            GameObject o;
+            (o = gameObject).SetActive(false);
+            Destroy(o, 2);
         }
     }
 }

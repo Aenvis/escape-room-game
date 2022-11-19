@@ -94,7 +94,7 @@ namespace Project.DebugConsole
         else enablePlayerMovement.Invoke();
         }
 
-        private void ToggleCursor(bool state)
+        private static void ToggleCursor(bool state)
         {
             Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = state;
