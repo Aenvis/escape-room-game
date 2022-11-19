@@ -72,3 +72,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+*.meta~dev
+
+Assets/_Scripts/_Systems/Interactable/MachineMaterialChanger.cs.meta~dev.meta
+
+Assets/_Scripts/_Systems/Interactable/MachineMaterialChanger.cs.meta~HEAD
+
+Assets/_Scripts/_Systems/Interactable/MachineMaterialChanger.cs.meta~HEAD.meta
