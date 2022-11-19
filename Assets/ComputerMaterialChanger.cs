@@ -9,7 +9,6 @@ namespace Project
         [SerializeField] private GameObject secondDisplay;
         [SerializeField] private Material material;
         
-        
         public void ChangeMaterial()
         {
             gameObject.GetComponent<Renderer>().material = material;
