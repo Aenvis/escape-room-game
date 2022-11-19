@@ -10,9 +10,19 @@ namespace Project.Systems.SoundSystem
         [SerializeField] private AudioSource musicSource;
         [SerializeField] private AudioSource universalEffectSource;
 
+        private AudioClip ac_ambient; // ac prefix for audio clip 
+        
         private void Start()
         {
             EffectSourceSpatialSetup();
+            PlayMusic();
+        }
+
+        private void PlayMusic()
+        {
+            ac_ambient = Resources.Load("underwater") as AudioClip;
+            musicSource.clip = ac_ambient;
+            musicSource.Play();
         }
 
         public void PlaySoundEffect(GameObject parent, AudioClip ac=null)
