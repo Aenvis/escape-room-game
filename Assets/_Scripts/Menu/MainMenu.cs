@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
    public void PlayGame()
    {
-      SceneManager.LoadScene("BartekTest");
+      SceneManager.LoadScene("TestBartek");
    }
    
    public void GoToStarMenu()
