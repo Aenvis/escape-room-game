@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quest: {fileID: 0}
   playerDistance: 5
-  soundEffect: {fileID: 8300000, guid: d72768e8fa46dce4db0bd295b6a10d7b, type: 3}
+  soundEffect: {fileID: 8300000, guid: c18c75c685cbb924f9293f96edc00594, type: 3}
   openAngle: 75
   openDuration: 1.5
 --- !u!65 &7415468176758182552

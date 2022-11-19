@@ -10,6 +10,10 @@ namespace Project.Player
 #endif
 		public class FirstPersonController : MonoBehaviour
 		{
+			[Header("Audio")]
+			[SerializeField] private AudioSource stepsAudioSource;
+
+			
 			[Header("Player")]
 			[Tooltip("Move speed of the character in m/s")]
 			public float MoveSpeed = 4.0f;
@@ -114,6 +118,18 @@ namespace Project.Player
 				JumpAndGravity();
 				GroundedCheck();
 				Move();
+				StepSounds();
+			}
+
+			private void StepSounds()
+			{
+				if (_input.move == Vector2.zero || !_controller.isGrounded)
+				{
+					stepsAudioSource.Pause();
+					return;
+				}
+				if (stepsAudioSource.isPlaying) return;
+				stepsAudioSource.Play();
 			}
 
 			private void LateUpdate()

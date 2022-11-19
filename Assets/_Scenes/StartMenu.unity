@@ -4347,7 +4347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585165199870005253, guid: 2167e69559c70ee478539e7dc0b1e3d2, type: 3}
       propertyPath: m_text
-      value: Fullccreen
+      value: Fullscreen
       objectReference: {fileID: 0}
     - target: {fileID: 3585165199870005253, guid: 2167e69559c70ee478539e7dc0b1e3d2, type: 3}
       propertyPath: m_fontColor.b
@@ -8342,11 +8342,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: ' LOW'
+    - m_Text: HIGH
       m_Image: {fileID: 0}
     - m_Text: MEDIUM
       m_Image: {fileID: 0}
-    - m_Text: HIGH
+    - m_Text: ' LOW'
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

@@ -1,5 +1,7 @@
-﻿using Project.Consts;
+﻿using System;
+using Project.Consts;
 using Project.Systems.Equipment;
+using UnityEngine;
 using Zenject;
 
 namespace Project.Systems.Interactable

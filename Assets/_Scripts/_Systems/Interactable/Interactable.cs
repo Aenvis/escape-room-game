@@ -2,6 +2,7 @@
 using Project.Systems.Equipment;
 using Project.Systems.Quest;
 using Project.Systems.SoundSystem;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -12,13 +13,14 @@ namespace Project.Systems.Interactable
     {
         [SerializeField] [CanBeNull] private QuestData quest;
         [SerializeField] protected float playerDistance;
-        [SerializeField] private AudioClip soundEffect;
+        [SerializeField] protected AudioClip soundEffect;
         
         
         protected Transform m_playerTransform;
         private PlayerActionMaps m_playerInput;
         private Inventory m_inventory;
         private SoundManager m_soundManager;
+        private AudioSource m_audioSource = null;
         private bool m_canInteract = true;
         private float m_questInfoTimer;
         private float m_questInfoTimerMax = 3f;
@@ -41,6 +43,12 @@ namespace Project.Systems.Interactable
         {
             m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             if(quest != null) quest.Completed = false;
+            
+            // usable items effects use universal audio source, because of them being destroyed upon collecting, which 
+            // would be bugged if we used audio source attached to the item ; 
+            // UsableItem use SoundManager.universalEffectSource
+            if (gameObject.GetType() == typeof(UsableItem)) return;
+            m_audioSource = CreateSpatialAudioSource();
         }
 
         private void Update()
@@ -82,12 +90,21 @@ namespace Project.Systems.Interactable
                 GUI.TextArea(new Rect(x, y, 600, 45), quest.GetText(), style);
         }
 
-        protected virtual void OnInteractKey(InputAction.CallbackContext context)
+        private void OnInteractKey(InputAction.CallbackContext context)
         {
             if(!m_canInteract || Vector3.Distance(transform.position, m_playerTransform.position) > playerDistance) return;
 
             if(CheckQuest()) Interaction();
-            m_soundManager.PlaySoundEffect(gameObject, soundEffect);
+            if (quest is not null && !quest.Completed) return;
+
+            var item = gameObject.GetComponent<UsableItem>();
+            if (item is not null)
+            {
+                m_soundManager.PlaySoundEffect(gameObject, soundEffect);
+                Debug.Log("USABLE ITEM");
+                return;
+            }
+            m_audioSource.PlayOneShot(soundEffect);
         }
 
         private bool CheckQuest()
@@ -105,6 +122,17 @@ namespace Project.Systems.Interactable
 
             m_questInfoTimer = m_questInfoTimerMax;
             return false;
+        }
+
+        private AudioSource CreateSpatialAudioSource()
+        {
+            var audioSrcGO = Instantiate(new GameObject("Audio Source", typeof(AudioSource)), transform.position, quaternion.identity); 
+            var audioSrc = audioSrcGO.GetComponent<AudioSource>();
+            audioSrcGO.transform.SetParent(gameObject.transform);
+            audioSrc.spatialize = true;
+            audioSrc.spatialBlend = 1.0f;
+            audioSrc.rolloffMode = AudioRolloffMode.Logarithmic;
+            return audioSrc;
         }
         
         protected abstract void Interaction();
