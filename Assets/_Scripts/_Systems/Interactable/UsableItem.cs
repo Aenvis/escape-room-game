@@ -27,7 +27,7 @@ namespace Project.Systems.Interactable
             soundEffect = Resources.Load($"{sfxName}") as AudioClip;
             #if UNITY_EDITOR
             if (!soundEffect) 
-                Debug.LogError($"COULDNT LOAD RESOURCE: {sfxName} in {gameObject.name}");
+                Debug.LogError($"COULDN'T LOAD RESOURCE: {sfxName} in {gameObject.name}");
             #endif
         }
 

@@ -7,7 +7,7 @@ namespace Project.Systems.Quest
     public class QuestData : ScriptableObject
     {
         [SerializeField] private ItemName requiredItem;
-        [SerializeField] private string textWhenUncompleted;
+        [SerializeField][Multiline] private string textWhenUncompleted;
 
         public bool Completed { get; set; }
         public ItemName GetRequiredItem() => requiredItem;
