@@ -36640,14 +36640,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 131951934}
     m_Modifications:
-    - target: {fileID: 526707283, guid: 98f471e853141174395411acb42dc984, type: 3}
-      propertyPath: openAngle
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 526707283, guid: 98f471e853141174395411acb42dc984, type: 3}
-      propertyPath: playerDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 311044836208277039, guid: 98f471e853141174395411acb42dc984, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06
