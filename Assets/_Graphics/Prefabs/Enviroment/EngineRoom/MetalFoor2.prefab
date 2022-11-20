@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4229034621463090792}
   - component: {fileID: 4329988107210247376}
   - component: {fileID: 7533877355172367993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MetalFoor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2427564327021934525}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -55.93, y: 0.35000047, z: -4.15539}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2113450314684310178
 MeshFilter:
